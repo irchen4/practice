@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+{%load static %}
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="{% static 'style1.css' %}">
+<title>Главная | Cool$$ provaider</title>
+</head>
+
+<header>
+        
+            <a href="#default" class="logo">Cool$$ provaider</a>
+            <div class="header-right">
+              <a class="active" href="#home">Тарифы</a>
+              <a href="{% url 'login' %}">Вход</a>
+            </div>
+
+</header>
+
+<body>
+
+<h1>Текущие тарифы</h1>
+<div class = "products">
+    <div class = "product-item">
+        <img src="./static/100r_97_av.jpg" alt="">
+        <span>Тариф 100</span>
+        <p>Стандартное, надежное</p>
+    </div>
+
+    <div class = "product-item">
+        <img src="./static/200r_17_rv.jpg" alt="">
+        <span>Тариф 200</span>
+        <p>Стандартное, но лучшее</p>
+    </div>
+
+    <div class = "product-item">
+        <img src="./static/500r_97_av.jpg" alt="">
+        <span>Тариф 500</span>
+        <p>Лучше, чем лучшее</p>
+    </div>
+    
+</div>
+<h1>Наши преимущества</h1>
+<div class = "products">
+    <div class = "product-item">
+Самый быстрый интернет по всей стране!
+    </div>
+    <div class = "product-item">
+Самые низкие цены на тарифы!
+</div>
+<div class = "product-item">
+Самые многофункциональные тарифы!
+</div>
+</div>
+
+<h1>Оставить заявку на подключение</h1>
+<div class = "forma">
+<form method="post" action="">
+    {% csrf_token %}
+<select name = "type">
+<option>Тариф 100</option>
+<option>Тариф 200</option>
+<option>Тариф 300</option>
+</select>
+<input class= "input_submit" type="text" name = "fio" placeholder="Введите свое ФИО" class="textbox"></input>
+<input class= "input_submit" type="tel" name = "telnum" placeholder="Введите свой телефон"></input>
+<input class= "input_submit" type="email" name = "email" placeholder="Введите свой email"></input>
+<button type="submit">Заказать звонок</button>
+</form>
+</div>
+</body>
+
+<footer>
+        <div class = "footer_text">
+            sun_wenz03@mail.ru <br>
+        +7 (924) 176 44 23 
+        Шкиперский проток д.15,  офис 232, Санкт-Петербург
+    </div>
+    
+</footer>
+</html>

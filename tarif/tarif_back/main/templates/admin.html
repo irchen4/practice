@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+{%load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static 'style1.css' %}">
+    <title>Главная | Cool$$ provaider</title>
+</head>
+
+<header>
+
+    <a href="#default" class="logo">Cool$$ provaider</a>
+    <div class="header-right">
+        <a class="active" href="#home">На главную</a>
+    </div>
+
+</header>
+
+<body>
+    <h1>Текущие заявки</h1>
+
+    <table class="resp-tab">
+            <table class="resp-tab">
+                {% for el in orderss %}
+                <tr>
+                    <th>Id Заказа</th>
+                    <th>Тариф</th>
+                    <th>ФИО</th>
+                    <th>Телефон</th>
+                    <th>Email</th>
+                </tr>
+                <tr>
+                    <td>{{el.id}}</td>
+                    <td>{{el.tarif}}</td>
+                    <td>{{el.customer}}</td>
+                    <td>{{el.phone}}</td>
+                    <td>{{el.email}}</td>
+                </tr>
+                {% endfor %}
+    </table>
+
+</body>
+
+<footer>
+    <div class="footer_text">
+        sun_wenz03@mail.ru <br>
+        +7 (924) 176 44 23
+        Шкиперский проток д.15, офис 232, Санкт-Петербург
+    </div>
+
+</footer>
+</html>
